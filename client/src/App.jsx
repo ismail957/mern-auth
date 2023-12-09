@@ -14,8 +14,8 @@ export default function App() {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/singin' element={<SingIn />} />
-          <Route path='/singup' element={<SingUp />} />
+          <Route path='/sing-in' element={<SingIn />} />
+          <Route path='/sing-up' element={<SingUp />} />
       </Routes>
     </BrowserRouter>
   )
