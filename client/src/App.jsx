@@ -3,16 +3,13 @@ import Home from './pages/Home'
 import About from './pages/About'
 import SingIn from './pages/SingIn'
 import SingUp from './pages/SingUp'
+import Header from './components/Header'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="flex flex-row place-content-around">
-        <Link to={'/'}>home</Link>
-        <Link to={'/about'}>about</Link>
-        <Link to={'/singin'}>Singin</Link>
-        <Link to={'/Singup'}>Singup</Link>
-      </div>
+      {/* Header */}
+      <Header />
 
       <Routes>
           <Route path='/' element={<Home />} />
