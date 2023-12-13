@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import jwt from 'bcrypt';
+import bcrypt from 'bcrypt'
+
 const userSchema = mongoose.Schema({
     username: {
         type: String,
@@ -24,7 +25,7 @@ const userSchema = mongoose.Schema({
 userSchema.methods.generateAuthToken = function() {
     const user = this;
 
-    const token = jwt.sign({
+    const token = bcrypt.sign({
         _id: user._id
     }, process.env.SECRET_KEY).toString();
 
@@ -32,6 +33,17 @@ userSchema.methods.generateAuthToken = function() {
 
     return token;
 }
+
+userSchema.pre("save", function (next) {
+    const user = this;
+
+    const hashedPassword = bcrypt.hashSync(user.password, 12);
+
+    user.password = hashedPassword;
+    
+    next();
+    
+})
 
 const User = mongoose.model('User', userSchema)
 
