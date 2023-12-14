@@ -7,6 +7,7 @@ import Header from './components/Header'
 
 export default function App() {
   return (
+    <>
     <BrowserRouter>
       {/* Header */}
       <Header />
@@ -18,5 +19,6 @@ export default function App() {
           <Route path='/sing-up' element={<SingUp />} />
       </Routes>
     </BrowserRouter>
+    </>
   )
 }
