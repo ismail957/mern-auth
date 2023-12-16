@@ -9,8 +9,8 @@ export default function Header() {
         <ul className="flex gap-4">
             <li><Link to={'/'}>home</Link></li>
             <li><Link to={'/about'}>about</Link></li>
-            <li><Link to={'/sing-in'}>Singin</Link></li>
-            <li><Link to={'/Sing-up'}>Singup</Link></li>
+            <li><Link to={'/sign-in'}>Sign In</Link></li>
+            <li><Link to={'/Sign-up'}>Sign Up</Link></li>
         </ul>
         </div>
     </div>

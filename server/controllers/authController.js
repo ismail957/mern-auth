@@ -19,8 +19,6 @@ const singup = async (req, res, next) => {
 const singin = async(req, res, next) => {
     const {email,password} = req.body;
 
-    console.log(req);
-    
     try {
         
         const validateUser = await User.findOne({email});
